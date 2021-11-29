@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <FeedbackBox t="Overall Feedback:" fn={getOverallValue} />
       <FeedbackBox t="Service Feedback:" fn={getStaffValue} />
-      <button className="Button" onClick={callAPI}>
+      <button className="Button" onClick={callApi}>
         Submit
       </button>
     </div>
