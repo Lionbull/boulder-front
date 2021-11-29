@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import FeedbackBox from "./components/FeedbackBox";
 import React, { useState, useEffect } from "react";
-
+import config from "./config.json"
+import logo from "./logo.png"
 
 function App() {
   const [overall_r, setOverall_r] = useState(0);
@@ -37,12 +37,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <FeedbackBox t="Overall Feedback:" fn={getOverallValue} />
-      <FeedbackBox t="Service Feedback:" fn={getStaffValue} />
-      <button className="Button" onClick={callApi}>
-        Submit
-      </button>
+    <div className="App" style={{background: config.style.primary_bg}}>
+      <img id="logo" src={logo} />
+      <div className="content" >
+        <FeedbackBox t={"Overall feedback"} />
+        <FeedbackBox t={"Service feedback"} />
+        <button className="Button" onClick={callApi}>
+          Submit
+        </button>
+      </div>
+      <div className="bg_lower" style={{background: config.style.secondary_bg}} ></div>
     </div>
   );
 }
